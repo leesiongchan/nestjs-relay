@@ -14,9 +14,7 @@ export class ConnectionTypeFactory {
 
     @ObjectType(`${args.nodeTypeName}Edge`)
     class Edge implements Relay.Edge<T> {
-      @Field(() => nodeType, {
-        nullable: true,
-      })
+      @Field(() => nodeType)
       node!: T;
 
       @Field(() => String)
@@ -25,9 +23,7 @@ export class ConnectionTypeFactory {
 
     @ObjectType(`${args.nodeTypeName}Connection`)
     class Connection implements Relay.Connection<T> {
-      @Field(() => [Edge], {
-        nullable: 'itemsAndList',
-      })
+      @Field(() => [Edge])
       edges!: Edge[];
 
       @Field(() => PageInfo)
