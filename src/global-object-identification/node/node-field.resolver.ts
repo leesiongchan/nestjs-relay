@@ -8,7 +8,8 @@ export type ResolvedNode =
   | Promise<null>
   | null
   | Promise<undefined>
-  | undefined;
+  | undefined
+  | any;
 
 export interface NodeResolver {
   resolveNode(id: ResolvedGlobalId): ResolvedNode;
